@@ -33,7 +33,7 @@ Please choose an option:
 3) Update a todo
 4) Delete a todo
 5) Quit
-6) 
+
 Select an option by entering the corresponding number."
 
 View all todos
