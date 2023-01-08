@@ -99,35 +99,39 @@ def update_todo_entry(todo_items_list):
 	pass
 
 
-# Working functions here
+while True:
 
-# Create
-# create_todo = create_new_todo(todo_item)
-# add_new_todo = add_todo_to_list(create_todo, todo_items)
+	# Todo options selctions questions
+	user_prompt = input("""Select one of the following options below:
+	
+		1) Create a new todo
+		2) Show your remaining todos
+		3) Update a todo
+		4) Delete a todo
+		5) Quit
+		: """)
+	
+	if user_prompt == '1':
+		# Create
+		create_todo = create_new_todo(todo_item)
+		add_new_todo = add_todo_to_list(create_todo, todo_items)
 
-# Read
-# print_todos = print_all_todos(todo_items)
+	elif user_prompt == '2':
+		# Read
+		print_todos = print_all_todos(todo_items)
 
-# Update
-# update_todo = update_todo_entry(todo_items)
+	elif user_prompt == '3':
+		# Update
+		update_todo = update_todo_entry(todo_items)
 
-# Delete
-# delete_todo = delete_todo_from_list(todo_items)
+	elif user_prompt == '4':
+		# Delete
+		delete_todo = delete_todo_from_list(todo_items)
 
-# print(todo_items)
+	elif user_prompt == '5':
+		break
 
-# while True:
-# 	todo = new_todo(new_task)
-# 	grow_todos = add_todo(todo, todo_list)
-	# print(todo_list)
+	else:
+		continue
 
-# Todo options selctions question
-# print(
-# """Select one of the following options below:
-
-# 1) Create a new todo
-# 2) Show remaining todos
-# 3) Update a todo
-# 4) Delete a todo
-# 5) Quit
-# """)
+print('Goodbye')

@@ -1,4 +1,5 @@
 Todo List
+
 This is a simple command-line todo list application. It allows you to create, view, update, and delete todo items.
 
 Getting Started
