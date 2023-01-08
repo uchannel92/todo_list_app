@@ -1,0 +1,38 @@
+This program will store a list of tasks a person is setting out to do.
+When a todo is complete the ...
+The user will be able to read all their todos, update their todos, add new todos and delete their todos.
+
+four functions to perform each taks
+
+read_all_todos
+update_todo
+add_todo
+delete_todo
+
+
+each value will be defined as a dictionary
+'title'
+'task'
+'date added'
+'is_todo_complete'
+
+
+add todo will have two functions
+one to create the dictionary NewTodo()
+the second function is to add the dictionary into the todo
+
+
+The add todo will have two parameters, AddTodo(New_Todo, Todo).
+Append the newtodo into the Todo
+
+# work on better function names and variables.
+
+
+# To update the todo list.
+I could simply ask what todo the user wants to edit.
+Then another question asking what value within the chosen todo needs updating.
+
+Enter the value of the todo you would like to update
+
+If value in todo_list:
+	I could manually list each value with equals?
