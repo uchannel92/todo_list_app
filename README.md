@@ -1,10 +1,13 @@
 Todo List
+
 This is a simple command-line todo list application. It allows you to create, view, update, and delete todo items.
 
 Getting Started
+
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 Prerequisites
+
 Python 3
 Installing
 Clone the repository
