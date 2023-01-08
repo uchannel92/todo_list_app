@@ -8,30 +8,33 @@ These instructions will get you a copy of the project up and running on your loc
 
 Prerequisites
 
-Python 3
+- Python 3
+
 Installing
-Clone the repository
-Copy code
-git clone https://github.com/[USERNAME]/todo-list.git
-Change into the project directory
-Copy code
-cd todo-list
-Run the application
-Copy code
-python todo_list.py
+
+1) Clone the repository
+- git clone https://github.com/[USERNAME]/todo-list.git
+
+2) Change into the project directory
+- cd todo-list
+
+3) Run the application
+- python todo_list.py
+
+
 Usage
+
 The application will prompt you with a menu of options:
 
-Copy code
-Welcome to your Todo List!
-
+"Welcome to your Todo List!
 Please choose an option:
 1) View all todos
 2) Add a new todo
 3) Update a todo
 4) Delete a todo
 5) Quit
-Select an option by entering the corresponding number.
+6) 
+Select an option by entering the corresponding number."
 
 View all todos
 
