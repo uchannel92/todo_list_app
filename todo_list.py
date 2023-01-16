@@ -33,17 +33,18 @@ def create_new_todo(todo_item):
 
 	title = input('title: ')
 	task = input('task: ')
-	priority = input('Enter todo urgency (high/medium/low) : ' )
 
 	todo_item['title'] = title
 	todo_item['task'] = task
 	todo_item['date_added'] = date_added_key
 
 	while True:
+		priority = input('Enter todo urgency (high/medium/low) : ' )
+
 		if priority.lower() in priorities:
 			todo_item['priority'] = priority
 			break
-		else:
+		elif priority.lower() not in priorities:
 			print('Enter the listed priority')
 			continue
 
@@ -62,14 +63,16 @@ def print_all_todos(todo_items_list):
 	if len(todo_items_list) == 0:
 		print("You have no todo's, start creating some! ")
 	else:
-		for index, todo in enumerate(todo_items_list):
+		index = 0
+		todo_items.sort(key=lambda x:('high' in x['priority'], 'medium' in x['priority'], 'low' in x['priority']), reverse=True)
+		for todo in todo_items:
 			title = todo['title']
 			task = todo['task']
 			date_added = todo['date_added']
 			priority = todo['priority']
 			print(f'{index})\n\tTitle: {title}\n\tTask: {task}\n\tDate Added: {date_added}\n\tPriority: {priority}')
 			print('\t\t\t---')
-
+			index += 1
 
 def delete_todo_from_list(todo_items_list):
 	print('Enter the todo number to delete.')
@@ -98,40 +101,39 @@ def update_todo_entry(todo_items_list):
 	print('Changes made.')
 	pass
 
+if __name__ == '__main__':
+	while True:
 
-while True:
+		# Todo options selctions questions
+		user_prompt = input("""Select one of the following options below:
+		
+			1) Create a new todo
+			2) Show your remaining todos
+			3) Update a todo
+			4) Delete a todo
+			5) Quit
+			: """)
+		
+		if user_prompt == '1':
+			# Create
+			create_todo = create_new_todo(todo_item)
+			add_new_todo = add_todo_to_list(create_todo, todo_items)
 
-	# Todo options selctions questions
-	user_prompt = input("""Select one of the following options below:
-	
-		1) Create a new todo
-		2) Show your remaining todos
-		3) Update a todo
-		4) Delete a todo
-		5) Quit
-		: """)
-	
-	if user_prompt == '1':
-		# Create
-		create_todo = create_new_todo(todo_item)
-		add_new_todo = add_todo_to_list(create_todo, todo_items)
+		elif user_prompt == '2':
+			# Read
+			print_todos = print_all_todos(todo_items)
 
-	elif user_prompt == '2':
-		# Read
-		print_todos = print_all_todos(todo_items)
+		elif user_prompt == '3':
+			# Update
+			update_todo = update_todo_entry(todo_items)
 
-	elif user_prompt == '3':
-		# Update
-		update_todo = update_todo_entry(todo_items)
+		elif user_prompt == '4':
+			# Delete
+			delete_todo = delete_todo_from_list(todo_items)
 
-	elif user_prompt == '4':
-		# Delete
-		delete_todo = delete_todo_from_list(todo_items)
+		elif user_prompt == '5':
+			break
 
-	elif user_prompt == '5':
-		break
-
-	else:
-		continue
-
-print('Goodbye')
+		else:
+			continue
+	print('Goodbye')
